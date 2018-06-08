@@ -62,8 +62,12 @@ format2 = function(gene, mat){
   }
   chr = chromosome[1]
   gen = c(chr='hg38') 
+  # draw the whole chromosome
+  ichr = IdeogramTrack(genome = gen, chromosome = chr)
+  # draw the genome cordinade bar automatically
   gtrack <- GenomeAxisTrack(name="Axis",
                             range <- IRanges(start=df$start, end=df$end))
+  # draw transcripts
   grtrack <- GeneRegionTrack(df, genome = gen,
                            chromosome = chr, name = gene,
                            strand = df$strand,
@@ -71,14 +75,17 @@ format2 = function(gene, mat){
                            background.panel = "#FFFEDB",
                            background.title = 'darkblue')
   png(paste0('./result/hg38_', gene, '.png'), res = 300, height = 280*nrow(mat), width = 1800)
-  plotTracks(list(itrackList[[chr]], gtrack, grtrack), col = 'red',
+  plotTracks(ichr, gtrack, grtrack), col = 'red',
              margin = 10, innerMargin = 10, fontcolor = 'black', fontface = 'bold',
              stackHeight = 0.1, extend.left = 50)
   dev.off()
 }
 
+# filter abnormal chromosomes
 chrs = paste0('chr', c(1:22, 'X', 'Y'))
 hg38 = subset(hg38, V3 %in% chrs)
+
+# do plotting in loops by gene
 for (gene in unique(as.vector(hg38$V13))[1:5]){
   print(gene)
   mat = subset(hg38, V13 == gene)
