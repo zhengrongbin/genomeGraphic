@@ -6,5 +6,21 @@ The main script is written in draw.R.
 The input or required file is genome annotation file.
 ```{r setup, include=FALSE}
 hg38 = read.csv('./db/hg38.refGene')
-head(hg38, n = 2)
 ```
+
+There are two functions:
+* 1. draw a transcript as a figure.
+```{r}
+format1(gene, mat)
+```
+result figure:
+<img src = './result/chr6-151690495-152103273-NM_001122742-ESR1.png'>
+
+* 2. draw a gene as a figure which will contains all the transcripts.
+```{r}
+format2(gene, mat)
+```
+result figure:
+<img src = './result/hg38_ESR1.png'>
+
+
