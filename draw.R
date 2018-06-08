@@ -75,7 +75,7 @@ format2 = function(gene, mat){
                            background.panel = "#FFFEDB",
                            background.title = 'darkblue')
   png(paste0('./result/hg38_', gene, '.png'), res = 300, height = 280*nrow(mat), width = 1800)
-  plotTracks(ichr, gtrack, grtrack), col = 'red',
+  plotTracks(list(ichr, gtrack, grtrack), col = 'red',
              margin = 10, innerMargin = 10, fontcolor = 'black', fontface = 'bold',
              stackHeight = 0.1, extend.left = 50)
   dev.off()
