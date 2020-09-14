@@ -1,6 +1,4 @@
 ## draw igv tracks
-library(data.table)
-library(ggplot2)
 library(Gviz)
 library(RColorBrewer)
 library(TxDb.Hsapiens.UCSC.hg38.knownGene)
