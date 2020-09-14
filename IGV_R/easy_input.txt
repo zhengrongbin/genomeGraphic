@@ -1,0 +1,5 @@
+PIAS1	55356_treat.bw
+FOXA1	84447_treat.bw
+AR	50259_treat.bw
+ERG	2918_treat.bw
+POLR2A	44589_treat.bw
