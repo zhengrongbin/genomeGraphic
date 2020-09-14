@@ -23,4 +23,4 @@ format2(gene, mat)
 result figure:
 <img src = './result/hg38_ESR1.png'>
 
-
+* 3. draw genome track using script in IGV_R folder, you should prepare bw file of ChIP-seq or other NGS data, and genomic intervals in bed file
