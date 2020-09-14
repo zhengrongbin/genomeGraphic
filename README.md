@@ -16,7 +16,7 @@ format1(gene, mat)
 result figure:
 <img src = './result/chr6-151690495-152103273-NM_001122742-ESR1.png'>
 
-* 2. draw a gene as a figure which will contains all the transcripts.
+* 2. draw a gene as a figure including all the transcripts.
 ```{r}
 format2(gene, mat)
 ```
